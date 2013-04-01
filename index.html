@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Hollywood Today</title>
+    <link href="s40-theme/css/s40-theme.css" rel="stylesheet" type="text/css" />
+    <script language="javascript" type="text/javascript" src="s40-theme/js/screensize.js"></script>
+	<script type="text/javascript" src="s40-theme/js/jquery.js"></script>
+	<script type="text/javascript" src="s40-theme/js/jqrss.js"></script>
+	<script type="text/javascript" src="s40-theme/js/app.js"></script>
+	<link rel="stylesheet" type="text/css" href="s40-theme/css/s40-theme_button.css" />
+</head>
+<body>
+    <div class="ui-page">
+        <!-- header -->
+        <div class="ui-header">
+            <div class="ui-title"><h2>Hollywood Today</h2></div><div id='homeBtn' class='ui-hide' onclick="mwl.switchClass('#subContent', 'ui-showmv', 'ui-hide'); mwl.switchClass('#sliderArea', 'slideRight', 'slideLeft'); mwl.switchClass('#homeBtn', 'ui-showmv', 'ui-hide');">
+		            	<img alt="icon" src="s40-theme/images/back_40x40.png" />
+	        </div>
+	        
+        </div>
+
+		<div class="ui-content"> 
+			<!-- main-content -->
+			<div class="slideLeft" id="sliderArea" style="width:700px;" >
+
+				<div id="mainContent" class='inline' >
+					<!-- list-items -->
+					<div class="ui-list">
+					    <div class="ui-list-item"  onclick="mwl.switchClass('#subContent', 'ui-hide', 'ui-showmv'); mwl.setGroupTarget('#subContent', '#content1', 'ui-showmv', 'ui-hide'); mwl.switchClass('#sliderArea', 'slideLeft', 'slideRight'); mwl.switchClass('#homeBtn', 'ui-hide', 'ui-showmv'); return false;">
+					    	LATEST NEWS
+					    </div>
+					    <div class="ui-list-item"  onclick="mwl.switchClass('#subContent', 'ui-hide', 'ui-showmv'); mwl.setGroupTarget('#subContent', '#content2', 'ui-showmv', 'ui-hide'); mwl.switchClass('#sliderArea', 'slideLeft', 'slideRight'); mwl.switchClass('#homeBtn', 'ui-hide', 'ui-showmv'); return false;">
+					    	WEEKLY RELEASES
+					    </div>
+					    <div class="ui-list-item"  onclick="mwl.switchClass('#subContent', 'ui-hide', 'ui-showmv'); mwl.setGroupTarget('#subContent', '#content3', 'ui-showmv', 'ui-hide'); mwl.switchClass('#sliderArea', 'slideLeft', 'slideRight'); mwl.switchClass('#homeBtn', 'ui-hide', 'ui-showmv'); return false;">
+					    	SPICY GOSSIP
+					    </div>
+					    
+					</div>
+				</div>
+						
+				<!-- FEEDS CONTENT -->
+		        <script type="text/javascript">
+		              window.onload=function(){
+		              		refresh_hollywood_news();
+		              		refresh_hollywood_releases();
+		              		refresh_hollywood_gossip();
+		              	}
+		        </script>
+
+				<div id="subContent" class='ui-hide inline'>
+
+					<!--RSSContent HOLLYWOOD NEWS-->
+				    <div class="ui-hide" id="content1">
+				    	<div class="feed-content-refresh" onclick="refresh_hollywood_news()">
+				    		Refresh Hollywood News
+				    	</div>
+				    	<div class="feed-content" id="hollywood-news">
+				    	</div>
+				    </div>
+
+				    <div class="ui-hide" id="content2">
+				    	<div class="feed-content-refresh" onclick="refresh_hollywood_releases()">
+				    		Refresh Hollywood Releases
+				    	</div>
+				    	<div class="feed-content" id="hollywood-releases">
+				    	</div>
+				    </div>
+
+				    <div class="ui-hide" id="content3">
+				    	<div class="feed-content-refresh" onclick="refresh_hollywood_gossip()">
+				    		Refresh Hollywood Gossip
+				    	</div>
+				    	<div class="feed-content" id="hollywood-gossip">
+				    	</div>
+				    </div>
+
+				</div>
+			</div>
+
+		</div> <!-- END UI-CONTENT -->
+
+    </div> <!-- END UI-PAGE -->
+</body>
+</html>
